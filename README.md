@@ -1,28 +1,41 @@
 # LatencyX
 
-Herramienta ligera en C++ para la optimizacion de latencia del sistema, ajuste del temporizador de Windows y gestion de procesos en ejecucion de juegos.
+Herramienta ligera en C++ para la optimización de la latencia del sistema, ajuste del temporizador de Windows y gestión avanzada de procesos en juegos.
 
-## Descripcion
+---
 
-LatencyX es una utilidad orientada al rendimiento que interactua directamente con las API de Windows (Win32) para reducir el latido del temporizador del sistema, elevar la prioridad de ejecucion de los procesos de juegos y ajustar la afinidad de nucleos de la CPU para minimizar el micro-stuttering y la latencia de entrada (input lag).
+## Descripción
 
-## Funcionalidades principales
+LatencyX es una utilidad de alto rendimiento orientada a la optimización del sistema que interactúa directamente con las API nativas de Windows (Win32). Su objetivo principal es reducir la latencia de entrada (input lag), minimizar el micro-stuttering y maximizar el rendimiento del hardware mediante la manipulación precisa de temporizadores, prioridades de ejecución y la afinidad de la CPU.
 
-- Ajuste de alta precision del System Timer (resolucion de temporizador de 1.0 ms / 0.5 ms via timeBeginPeriod).
-- Elevacion automatica de prioridad de procesos detectados a HIGH_PRIORITY_CLASS.
-- Asignacion de mascara de afinidad de CPU para garantizar ejecucion en nucleos fisicos.
-- Consumo de recursos minimo (ejecutable autocontenido, sin dependencias externas pesadas).
+---
 
-## Requisitos de compilacion
+## Características Principales
 
-- Sistema operativo Windows 10 u 11 (64 bits).
-- Compilador compatible con C++17 (MSVC, MinGW-w64 o Clang).
-- CMake 3.16 o superior.
+| Funcionalidad | Descripción |
+| :--- | :--- |
+| Control del System Timer | Ajuste de alta precisión del temporizador del sistema (resoluciones de 1.0 ms / 0.5 ms mediante `timeBeginPeriod`). |
+| Gestión de Procesos | Elevación automática de la prioridad de ejecución a `HIGH_PRIORITY_CLASS` para los procesos seleccionados. |
+| Afinidad de CPU | Asignación de máscaras de afinidad para priorizar núcleos físicos y optimizar el rendimiento de procesamiento. |
+| Purga de Memoria RAM | Liberación de memoria física en segundo plano para mantener la estabilidad operativa. |
+| Interfaz Gráfica | Interfaz de usuario construida con Dear ImGui y aceleración por DirectX 11. |
+| Eficiencia de Recursos | Ejecutable autocontenido, diseñado para mantener un consumo mínimo de recursos. |
 
-## Compilacion e instalacion
+---
+
+## Requisitos del Sistema
+
+- **Sistema Operativo:** Windows 10 u 11 (64 bits).
+- **Compilador:** Compatible con C++17 (MSVC, MinGW-w64 o Clang).
+- **Herramientas de construcción:** CMake 3.16 o superior.
+
+---
+
+## Compilación e Instalación
 
 1. Clonar el repositorio:
-   git clone https://github.com/tu-usuario/LatencyX.git
+   ```bash
+   git clone [https://github.com/dmateob31/LatencyX.git](https://github.com/dmateob31/LatencyX.git)
    cd LatencyX
 
 2. Generar los archivos de construccion con CMake:
@@ -33,11 +46,27 @@ LatencyX es una utilidad orientada al rendimiento que interactua directamente co
 
 El binario ejecutable `LatencyX.exe` se encontrara en el directorio `build/Release` o `build/`.
 
-## Uso
+Uso
+Dirígete a la carpeta donde se compiló el binario.
 
-Ejecutar `LatencyX.exe` con privilegios de administrador para permitir la modificacion de prioridades de procesos del sistema y la alteracion de la resolucion del temporizador.
+Ejecute LatencyX.exe con privilegios de administrador.
 
+Nota: Los privilegios de administrador son obligatorios para permitir la modificación de las prioridades de los procesos del sistema y la alteración de la resolución del temporizador.
 
+Contribuciones
+Las contribuciones al proyecto son bienvenidas. Si desea proponer mejoras, reportar incidencias o incorporar nuevas características:
+
+Realice un fork del repositorio.
+
+Cree una rama para su funcionalidad (git checkout -b feature/NombreFuncionalidad).
+
+Confirme sus cambios (git commit -m 'Descripción de los cambios').
+
+Suba la rama (git push origin feature/NombreFuncionalidad).
+
+Abra una solicitud de extracción (Pull Request).
+
+Licencia
 ## License & Acknowledgments
 
 This project uses **Dear ImGui**, licensed under the terms of the MIT License:
